@@ -22,49 +22,47 @@ class App extends Component {
         </header> */}
         <div class="container">
           <div class="row">
-            <div class="col-sm-6">
+            <div class="col-xs-12 col-sm-6">
               <div class="title">
                 <h1>Ninja Blender</h1>
               </div>
               <div class="carousel">
                 <img src="http://placekitten.com/300/300" alt="kitty"></img>
                 <div>
-                  <img src="http://placekitten.com/100/100" alt="kitty1"></img>
-                  <img src="http://placekitten.com/100/100" alt="kitty2"></img>
-                  <img src="http://placekitten.com/100/100" alt="kitty3"></img>
+                  <img src="http://placekitten.com/100/100" alt="kitty1" class="img-thumbnail"></img>
+                  <img src="http://placekitten.com/100/100" alt="kitty2" class="img-thumbnail"></img>
+                  <img src="http://placekitten.com/100/100" alt="kitty3" class="img-thumbnail"></img>
                 </div>
               </div>
             </div>
-            <div class="col-sm-6">
+            <div class="col-xs-12 col-sm-6">
               <div class="price">
-                <h2>$139.99</h2>
-                <p>online pricing</p>
+                <h2>$139.99 <small class="text-lowercase">online price</small></h2>
               </div>
               <div class="offers">
                 <hr />
-                <p>offer 1</p>
-                <p>offer 2</p>
+                <p class="text-lowercase">offer 1</p>
+                <p class="text-lowercase">offer 2</p>
                 <hr />
               </div>
               <div class="quantity-picker">
-                <input type="number"></input>
+                <input type="number" placeholder="quantity:"></input>
               </div>
               <div class="primary-button-group">
-                <button class="pick-up-in-store">pick up in store</button>
-                <a href class="find-a-store">find a store</a>
-                <button class="add-to-cart">add to cart</button>
+                <button type="button" class="btn btn-primary btn-lg text-uppercase">pick up in store</button>
+                <button type="button" class="btn btn-primary btn-lg text-uppercase">add to cart</button>
               </div>
               <div class="return-policy">
-                <h3>returns</h3>
+                <p class="lead text-lowercase">returns</p>
                 <p>Meoooow this human feeds me, i should be a god lick butt, or scratch leg; meow for can opener to feed me floof tum, tickle bum, jellybean footies curly toes.</p>
               </div>
               <div class="secondary-button-group">
-                <button class="add-to-registry">add to registry</button>
-                <button class="add-to-list">add to list</button>
-                <button class="share">share</button>
+                <button type="button" class="btn btn-secondary btn-sm text-uppercase">add to registry</button>
+                <button type="button" class="btn btn-secondary btn-sm text-uppercase">add to list</button>
+                <button type="button" class="btn btn-secondary btn-sm text-uppercase">share</button>
               </div>
               <div class="product-highlights">
-                <h2>product highlights</h2>
+                <h2 class="text-lowercase">product highlights</h2>
                 <ul>
                   <li>Sleep on keyboard chase the pig around the house</li>
                   <li>Sleep on keyboard chase the pig around the house</li>
@@ -76,20 +74,20 @@ class App extends Component {
             </div>
           </div>
           <div class="row">
-            {/* <div class="col-sm-6"> */}
+            {/* <div class="col-xs-12 col-sm-6"> */}
               <div class="ratings-and-reviews">
                 <div class="ratings">
-                  <p>overall</p>
-                  <a href>view all reviews</a>
+                  <p class="text-lowercase">overall</p>
+                  <a class="text-lowercase" href>view all reviews</a>
                 </div>
                 <div class="reviews">
                   <div class="pro">
-                    <h3>pro</h3>
-                    <p>most helpful positive review</p>
+                    <h3 class="text-uppercase">pro</h3>
+                    <p class="text-lowercase">most helpful positive review</p>
                   </div>
                   <div class="con">
-                    <h3>con</h3>
-                    <p>most helpful negetive review</p>
+                    <h3 class="text-uppercase">con</h3>
+                    <p class="text-lowercase">most helpful negetive review</p>
                   </div>
                   <hr />
                   <div class="pro-review">
