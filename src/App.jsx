@@ -3,6 +3,23 @@ import React, { Component } from 'react';
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      // whatever: "whatever",
+      // data: null,
+      // error: null,
+      // loading: true
+    }
+  }
+
+  componentDidMount() { //sometimes abbreviated CDM
+    // do fetch here
+    // returns Promise
+    // .then((data) => this.setState({loading: false, data})).catch((error) => this.setState({loading: false, error}))
+    // this.setState()
+  }
+
   render() {
     return (
       <div className="App">
@@ -20,6 +37,11 @@ class App extends Component {
             Learn React
           </a>
         </header> */}
+
+        {/* <div id="example">
+          {this.state.whatever}
+        </div> */}
+
         <div class="container">
           <div class="row">
             <div class="col-xs-12 col-sm-6">
