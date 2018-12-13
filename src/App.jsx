@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-// import logo from './assets/logo.svg';
 import './App.css';
-
-// let dataRequest = new Request('')
 
 class App extends Component {
   constructor(props) {
@@ -32,23 +29,6 @@ class App extends Component {
         }
       )
   }
-  // constructor(props) {
-  //   super(props)
-  //   this.state = {
-  //     // whatever: "whatever",
-  //     // data: null,
-  //     // error: null,
-  //     // loading: true
-  //   }
-  // }
-
-  // componentDidMount() { //sometimes abbreviated CDM
-
-  //   // do fetch here
-  //   // returns Promise
-  //   // .then((data) => this.setState({loading: false, data})).catch((error) => this.setState({loading: false, error}))
-  //   // this.setState()
-  // }
 
   render() {
     const { error, isLoaded, data } = this.state;
@@ -57,56 +37,58 @@ class App extends Component {
     } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
+      const itemData = data.CatalogEntryView[0];
+      const imageData = itemData.Images[0]
+      const primaryImageLocation = new RegExp(imageData.PrimaryImage[0].image)
+      const alternateImageLocations = imageData.AlternateImages//.map(data => Object.values(data))
+      console.log(alternateImageLocations)
+      const offers = itemData.Offers[0].OfferPrice[0]
+      const promotions = itemData.Promotions
+      const itemAvailability = itemData.purchasingChannelCode
+      const availableInStores = (itemAvailability === '0') || (itemAvailability === '2')
+      const availableOnline = (itemAvailability === '0') || (itemAvailability === '1')
+      const features = itemData.ItemDescription[0].features
+      const usefulProReview = itemData.CustomerReview[0].Pro[0]
+      const usefulConReview = itemData.CustomerReview[0].Con[0]
+      const reviews = itemData.CustomerReview[0].Reviews
       return (
       <div className="App">
-        <div>{JSON.stringify(data.CatalogEntryView[0].CustomerReview)}</div>
-        {/* <ul>
-          {items.map(item => (
-            <li key={item.name}>
-              {item.name} {item.price}
-            </li>
-          ))}
-        </ul> */}
-
-        {/* <div id="example">
-          {this.state.whatever}
-        </div> */}
-
+        {/* <div>{JSON.stringify(data.CatalogEntryView[0].CustomerReview)}</div> */}
         <div className="container">
           <div className="row">
             <div className="col-xs-12 col-sm-6">
               <div className="title">
-                <h1>Ninja Blender</h1>
+                <h1>{itemData.title}</h1>
               </div>
               <div className="carousel">
-                <img src="http://placekitten.com/300/300" alt="kitty"></img>
+                <img src={primaryImageLocation.source} alt="kitty"></img>
                 <div>
-                  <img src="http://placekitten.com/100/100" alt="kitty1" className="img-thumbnail"></img>
-                  <img src="http://placekitten.com/100/100" alt="kitty2" className="img-thumbnail"></img>
-                  <img src="http://placekitten.com/100/100" alt="kitty3" className="img-thumbnail"></img>
+                  {alternateImageLocations.map(location => (
+                    <img src={location.image} alt="" className="img-thumbnail"></img>
+                  ))}
                 </div>
               </div>
             </div>
             <div className="col-xs-12 col-sm-6">
               <div className="price">
-                <h2>$139.99 <small className="text-lowercase">online price</small></h2>
+                <h2>{offers.formattedPriceValue} <small className="text-lowercase">{offers.priceQualifier}</small></h2>
               </div>
-              <div className="offers">
+              <div className="promotions">
                 <hr />
-                <p className="text-lowercase">offer 1</p>
-                <p className="text-lowercase">offer 2</p>
+                <p className="text-lowercase">{promotions[0].Description[0].shortDescription}</p>
+                <p className="text-lowercase">{promotions[1].Description[0].shortDescription}</p>
                 <hr />
               </div>
               <div className="quantity-picker">
                 <input type="number" placeholder="quantity:"></input>
               </div>
               <div className="primary-button-group">
-                <button type="button" className="btn btn-primary btn-lg text-uppercase">pick up in store</button>
-                <button type="button" className="btn btn-primary btn-lg text-uppercase">add to cart</button>
+                <button availableInStores={true} type="button" className="btn btn-primary btn-lg text-uppercase">pick up in store</button>
+                <button availableOnline={true} type="button" className="btn btn-primary btn-lg text-uppercase">add to cart</button>
               </div>
               <div className="return-policy">
                 <p className="lead text-lowercase">returns</p>
-                <p>Meoooow this human feeds me, i should be a god lick butt, or scratch leg; meow for can opener to feed me floof tum, tickle bum, jellybean footies curly toes.</p>
+                <p>This item must be returned within 30 days of the ship date. See <a href="/">return policy</a> for details. Prices, promotions, styles and availability may vary by store and online.</p>
               </div>
               <div className="secondary-button-group">
                 <button type="button" className="btn btn-secondary btn-sm text-uppercase">add to registry</button>
@@ -116,11 +98,10 @@ class App extends Component {
               <div className="product-highlights">
                 <h2 className="text-lowercase">product highlights</h2>
                 <ul>
-                  <li>Sleep on keyboard chase the pig around the house</li>
-                  <li>Sleep on keyboard chase the pig around the house</li>
-                  <li>Sleep on keyboard chase the pig around the house</li>
-                  <li>Sleep on keyboard chase the pig around the house</li>
-                  <li>Sleep on keyboard chase the pig around the house</li>
+                  {features.map(feature => (
+                    <li dangerouslySetInnerHTML={{__html: feature}}>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -129,27 +110,27 @@ class App extends Component {
               <div className="ratings-and-reviews">
                 <div className="ratings">
                   <p className="text-lowercase">overall</p>
-                  <a className="text-lowercase" href="/">view all reviews</a>
+                  <a className="text-lowercase" href="/">view all {reviews.length} reviews</a>
                 </div>
                 <div className="reviews">
                   <div className="pro">
                     <h3 className="text-uppercase">pro</h3>
-                    <p className="text-lowercase">most helpful positive review</p>
+                    <p className="text-lowercase">most helpful 4-5 star review</p>
                   </div>
                   <div className="con">
                     <h3 className="text-uppercase">con</h3>
-                    <p className="text-lowercase">most helpful negetive review</p>
+                    <p className="text-lowercase">most helpful 1-2 star review</p>
                   </div>
                   <hr />
                   <div className="pro-review">
-                    <h4>pro review title</h4>
-                    <p>Ignore the human until she needs to get up, then climb on her lap and sprawl</p>
-                    <p>Name and date</p>
+                    <h4>{usefulProReview.title}</h4>
+                    <p>{usefulProReview.review}</p>
+                    <p>{usefulProReview.screenName}, {usefulProReview.datePosted}</p>
                   </div>
                   <div className="con-review">
-                    <h4>con review title</h4>
-                    <p>Push your water glass on the floor it's 3am, time to create some chaos</p>
-                    <p>Name and date</p>
+                    <h4>{usefulConReview.title}</h4>
+                    <p>{usefulConReview.review}</p>
+                    <p>{usefulConReview.screenName}, {usefulConReview.datePosted}</p>
                   </div>
                 </div>
               </div>
