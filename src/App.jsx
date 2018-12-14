@@ -40,8 +40,7 @@ class App extends Component {
       const itemData = data.CatalogEntryView[0];
       const imageData = itemData.Images[0]
       const primaryImageLocation = new RegExp(imageData.PrimaryImage[0].image)
-      const alternateImageLocations = imageData.AlternateImages//.map(data => Object.values(data))
-      console.log(alternateImageLocations)
+      const alternateImageLocations = imageData.AlternateImages
       const offers = itemData.Offers[0].OfferPrice[0]
       const promotions = itemData.Promotions
       const itemAvailability = itemData.purchasingChannelCode
@@ -51,9 +50,17 @@ class App extends Component {
       const usefulProReview = itemData.CustomerReview[0].Pro[0]
       const usefulConReview = itemData.CustomerReview[0].Con[0]
       const reviews = itemData.CustomerReview[0].Reviews
+
+      function AvailableInStores(props) {
+        return <button type="button" className="btn btn-primary btn-lg text-uppercase">pick up in store</button>
+      }
+
+      function AvailableOnline(props) {
+        return <button type="button" className="btn btn-primary btn-lg text-uppercase">add to cart</button>
+      }
+
       return (
       <div className="App">
-        {/* <div>{JSON.stringify(data.CatalogEntryView[0].CustomerReview)}</div> */}
         <div className="container">
           <div className="row">
             <div className="col-xs-12 col-sm-6">
@@ -61,10 +68,10 @@ class App extends Component {
                 <h1>{itemData.title}</h1>
               </div>
               <div className="carousel">
-                <img src={primaryImageLocation.source} alt="kitty"></img>
+                <img src={primaryImageLocation.source} alt=""></img>
                 <div>
                   {alternateImageLocations.map(location => (
-                    <img src={location.image} alt="" className="img-thumbnail"></img>
+                    <img src={location.image} alt="" className="thumbnail"></img>
                   ))}
                 </div>
               </div>
@@ -83,8 +90,8 @@ class App extends Component {
                 <input type="number" placeholder="quantity:"></input>
               </div>
               <div className="primary-button-group">
-                <button availableInStores={true} type="button" className="btn btn-primary btn-lg text-uppercase">pick up in store</button>
-                <button availableOnline={true} type="button" className="btn btn-primary btn-lg text-uppercase">add to cart</button>
+                <AvailableInStores availableInStores={availableInStores} />
+                <AvailableOnline availableOnline={availableOnline} />
               </div>
               <div className="return-policy">
                 <p className="lead text-lowercase">returns</p>

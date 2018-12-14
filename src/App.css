@@ -1,0 +1,11 @@
+.container {
+  padding: 50px;
+}
+
+.carousel {
+  padding: 20px;
+}
+.carousel .thumbnail {
+  max-width: 100px;
+  max-height: 100px;
+}
