@@ -1,3 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2 {
+  font-weight: 300;
+}
+
+.price h2 {
+  font-weight: 700;
+}
+
+small {
+  font-size: small;
+}
+
+button {
+  align-items: flex-start;
+  margin: 3px;
+}
+
 .container {
   padding: 50px;
 }
@@ -8,4 +31,88 @@
 .carousel .thumbnail {
   max-width: 100px;
   max-height: 100px;
+}
+
+.promotions {
+  color: #CA0813;
+}
+
+.return-policy {
+  display: flex;
+  margin: auto;
+  padding: 10px 0px;
+}
+
+.return-policy .lead {
+  display: block;
+  padding-right: 20px;
+}
+
+.return-policy .copy {
+  display: block;
+  padding-left: 20px;
+  border-left: thin solid #E5E5E5;
+  font-size: smaller;
+}
+
+.primary-button-group, .secondary-button-group {
+  text-align: center;
+  padding:20px 0px;
+}
+
+.available-in-store {
+  background: #333333;
+  border-color: #333333;
+}
+
+.available-in-store:hover {
+  background: #000000;
+  border-color: #000000;
+}
+
+.available-online {
+  background: #CA0813;
+  border-color: #CA0813;
+}
+
+.available-online:hover {
+  background: #A8050F;
+  border-color: #A8050F;
+}
+
+.secondary-button-group .btn {
+  color: black;
+  background: #EAEAEA;
+  border-color: #EAEAEA;
+}
+
+.secondary-button-group .btn:hover {
+  background: #D3D3D3;
+  border-color: #D3D3D3;
+}
+
+.ratings {
+  display: block;
+  background-color: #FFFFFF;
+}
+
+/* .ratings p {
+  float: left;
+}
+
+.ratings a {
+  float: right;
+} */
+
+.reviews {
+  background-color: #EAEAEA;
+  padding: 10px;
+}
+
+.reviews-header {
+  display: flex;
+}
+
+.reviews-body {
+  display: flex;
 }
