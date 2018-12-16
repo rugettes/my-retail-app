@@ -118,20 +118,17 @@ button {
 
 .stars > label {
   color: #ddd;
- float: right;
+  float: right;
 }
 
 .stars > input:checked ~ label,
-.stars:not(:checked) > label:hover,
-.stars:not(:checked) > label:hover ~ label {
-   color: #FFD700;
-}
-
 .stars > input:checked + label:hover,
 .stars > input:checked ~ label:hover,
 .stars > label:hover ~ input:checked ~ label,
-.stars > input:checked ~ label:hover ~ label {
-  color: #FFED85;
+.stars > input:checked ~ label:hover ~ label
+.stars:not(:checked) > label:hover,
+.stars:not(:checked) > label:hover ~ label {
+  color: #CA0813;
 }
 
 .reviews {
