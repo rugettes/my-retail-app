@@ -52,23 +52,23 @@ class App extends Component {
       const reviews = itemData.CustomerReview[0].Reviews
 
       function AvailableInStores(props) {
-        return <button type="button" className="col-5 btn btn-primary btn-lg text-uppercase available-in-store">pick up in store</button>
+        return <button type="button" className="col-md btn btn-primary btn-lg text-uppercase available-in-store">pick up in store</button>
       }
 
       function AvailableOnline(props) {
-        return <button type="button" className="col-5 btn btn-primary btn-lg text-uppercase available-online">add to cart</button>
+        return <button type="button" className="col-md btn btn-primary btn-lg text-uppercase available-online">add to cart</button>
       }
 
       return (
       <div className="App">
         <div className="container">
           <div className="row">
-            <div className="col-xs-12 col-sm-6">
+            <div className="col-md">
               <div className="title">
                 <h1>{itemData.title}</h1>
               </div>
               <div className="carousel">
-                <img src={primaryImageLocation.source} alt=""></img>
+                <img src={primaryImageLocation.source} alt="" className="primary"></img>
                 <div className="text-center">
                   {alternateImageLocations.map(location => (
                     <img src={location.image} alt="" className="rounded thumbnail"></img>
@@ -76,7 +76,7 @@ class App extends Component {
                 </div>
               </div>
             </div>
-            <div className="col-xs-12 col-sm-6">
+            <div className="col-md">
               <div className="price">
                 <h2>{offers.formattedPriceValue} <small className="text-lowercase">{offers.priceQualifier}</small></h2>
               </div>
@@ -85,17 +85,21 @@ class App extends Component {
                 {promotions.map(promotion => (
                   <>
                     <p className="text-lowercase">
-                      <i class="fas fa-tag"></i>&nbsp;
+                      <i className="fas fa-tag"></i>&nbsp;
                       {promotion.Description[0].shortDescription}
                     </p>
                   </>
                 ))}
                 <hr />
               </div>
-              <div className="quantity-picker">
-                <input type="number" placeholder="quantity:"></input>
+              <div className="quantity-picker col-xs-12 col-md-5 col-lg-7">
+                <label>quantity:</label>
+                <i className="fas fa-plus-circle"></i>
+                <input placeholder="1" type="number" step="1" min="0"></input>
+                <i className="fas fa-minus-circle"></i>
               </div>
-              <div className="primary-button-group">
+              <div className="clearfix"></div>
+              <div className="primary-button-group row">
                 <AvailableInStores availableInStores={availableInStores} />
                 <AvailableOnline availableOnline={availableOnline} />
               </div>
@@ -103,10 +107,10 @@ class App extends Component {
                 <p className="lead text-lowercase">returns</p>
                 <p className="copy">This item must be returned within 30 days of the ship date. See <a href="/">return policy</a> for details. Prices, promotions, styles and availability may vary by store and online.</p>
               </div>
-              <div className="secondary-button-group">
-                <button type="button" className="btn btn-secondary btn-sm text-uppercase">add to registry</button>
-                <button type="button" className="btn btn-secondary btn-sm text-uppercase">add to list</button>
-                <button type="button" className="btn btn-secondary btn-sm text-uppercase">share</button>
+              <div className="secondary-button-group row">
+                <button type="button" className="col-sm btn btn-secondary btn-sm text-uppercase">add to registry</button>
+                <button type="button" className="col-sm btn btn-secondary btn-sm text-uppercase">add to list</button>
+                <button type="button" className="col-sm btn btn-secondary btn-sm text-uppercase">share</button>
               </div>
               <div className="product-highlights">
                 <h2 className="text-lowercase">product highlights</h2>
@@ -120,7 +124,7 @@ class App extends Component {
             </div>
           </div>
           <div className="row">
-              <div className="ratings-and-reviews">
+              <div className="ratings-and-reviews col-md-12 col-lg-6">
                 <div className="ratings">
                   <fieldset className="stars">
                     <label className="full" for="star5" title="5 stars"></label>
@@ -156,28 +160,29 @@ class App extends Component {
                   <p className="text-lowercase">overall</p>
                   <a className="text-lowercase" href="/">view all {reviews.length} reviews</a>
                 </div>
+                <div className="clearfix"></div>
                 <div className="reviews">
                   <div className="reviews-header">
-                    <div className="pro">
+                    <div className="pro col-sm">
                       <h3 className="text-uppercase">pro</h3>
-                      <p className="text-lowercase">most helpful 4-5 star review</p>
+                      <p className="text-lowercase"><small>most helpful 4-5 star review</small></p>
                     </div>
-                    <div className="con">
+                    <div className="con col-sm">
                       <h3 className="text-uppercase">con</h3>
-                      <p className="text-lowercase">most helpful 1-2 star review</p>
+                      <p className="text-lowercase"><small>most helpful 1-2 star review</small></p>
                     </div>
                   </div>
                   <hr />
                   <div className="reviews-body">
-                    <div className="pro-review">
+                    <div className="pro-review col-sm">
                       <h4>{usefulProReview.title}</h4>
                       <p>{usefulProReview.review}</p>
-                      <p>{usefulProReview.screenName}, {usefulProReview.datePosted}</p>
+                      <p><a href="/">{usefulProReview.screenName}</a>, {usefulProReview.datePosted}</p>
                     </div>
-                    <div className="con-review">
+                    <div className="con-review col-sm">
                       <h4>{usefulConReview.title}</h4>
                       <p>{usefulConReview.review}</p>
-                      <p>{usefulConReview.screenName}, {usefulConReview.datePosted}</p>
+                      <p><a href="/">{usefulConReview.screenName}</a>, {usefulConReview.datePosted}</p>
                     </div>
                   </div>
                 </div>
