@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-
+import Title from './components/Title'
 import Carousel from './components/Carousel'
 
 class App extends Component {
@@ -64,9 +64,7 @@ class App extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md">
-              <div className="title">
-                <h1>{itemData.title}</h1>
-              </div>
+              <Title title={itemData.title} />
               <Carousel imageData={imageData}/>
             </div>
             <div className="col-md">
