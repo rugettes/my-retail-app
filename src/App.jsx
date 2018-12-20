@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import Title from './components/Title'
-import Price from './components/Price'
 import Carousel from './components/Carousel'
+import Price from './components/Price'
+import Promotions from './components/Promotions'
+import Title from './components/Title'
 
 class App extends Component {
   constructor(props) {
@@ -70,18 +71,7 @@ class App extends Component {
             </div>
             <div className="col-md">
               <Price priceData={priceData} />
-              <div className="promotions">
-                <hr />
-                {promotions.map(promotion => (
-                  <>
-                    <p className="text-lowercase">
-                      <i className="fas fa-tag"></i>&nbsp;
-                      {promotion.Description[0].shortDescription}
-                    </p>
-                  </>
-                ))}
-                <hr />
-              </div>
+              <Promotions promotions={promotions} />
               <div className="quantity-picker col-xs-12 col-md-5 col-lg-7">
                 <label>quantity:</label>
                 <i className="fas fa-plus-circle"></i>

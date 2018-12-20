@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './Price.css'
 
-export default class Carousel extends Component {
+export default class Price extends Component {
   render() {
     return (
       <div className="price">

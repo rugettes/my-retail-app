@@ -45,10 +45,6 @@ input[type=number]::-webkit-outer-spin-button {
   padding: 50px;
 }
 
-.promotions {
-  color: #CA0813;
-}
-
 .quantity-picker {
   border: thin solid #E5E5E5;
   display: inline-block;
