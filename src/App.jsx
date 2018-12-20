@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Title from './components/Title'
+import Price from './components/Price'
 import Carousel from './components/Carousel'
 
 class App extends Component {
@@ -41,7 +42,7 @@ class App extends Component {
     } else {
       const itemData = data.CatalogEntryView[0];
       const imageData = itemData.Images[0]
-      const offers = itemData.Offers[0].OfferPrice[0]
+      const priceData = itemData.Offers[0].OfferPrice[0]
       const promotions = itemData.Promotions
       const itemAvailability = itemData.purchasingChannelCode
       const availableInStores = (itemAvailability === '0') || (itemAvailability === '2')
@@ -68,9 +69,7 @@ class App extends Component {
               <Carousel imageData={imageData}/>
             </div>
             <div className="col-md">
-              <div className="price">
-                <h2>{offers.formattedPriceValue} <small className="text-lowercase">{offers.priceQualifier}</small></h2>
-              </div>
+              <Price priceData={priceData} />
               <div className="promotions">
                 <hr />
                 {promotions.map(promotion => (
