@@ -49,20 +49,6 @@ input[type=number]::-webkit-outer-spin-button {
   padding: 50px;
 }
 
-.carousel {
-  padding: 20px;
-  text-align: center;
-}
-
-.carousel .primary {
-  margin: auto;
-}
-
-.carousel .thumbnail {
-  max-width: 100px;
-  max-height: 100px;
-}
-
 .promotions {
   color: #CA0813;
 }

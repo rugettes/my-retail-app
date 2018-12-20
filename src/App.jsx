@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import Carousel from './components/Carousel'
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -39,8 +41,6 @@ class App extends Component {
     } else {
       const itemData = data.CatalogEntryView[0];
       const imageData = itemData.Images[0]
-      const primaryImageLocation = new RegExp(imageData.PrimaryImage[0].image)
-      const alternateImageLocations = imageData.AlternateImages
       const offers = itemData.Offers[0].OfferPrice[0]
       const promotions = itemData.Promotions
       const itemAvailability = itemData.purchasingChannelCode
@@ -67,14 +67,7 @@ class App extends Component {
               <div className="title">
                 <h1>{itemData.title}</h1>
               </div>
-              <div className="carousel">
-                <img src={primaryImageLocation.source} alt="" className="primary"></img>
-                <div className="text-center">
-                  {alternateImageLocations.map(location => (
-                    <img src={location.image} alt="" className="rounded thumbnail"></img>
-                  ))}
-                </div>
-              </div>
+              <Carousel imageData={imageData}/>
             </div>
             <div className="col-md">
               <div className="price">
