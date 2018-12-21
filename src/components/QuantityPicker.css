@@ -1,0 +1,30 @@
+.quantity-picker {
+  border: thin solid #E5E5E5;
+  display: inline-block;
+}
+
+.quantity-picker label {
+  margin-top: 10px;
+  padding-right: 10px;
+  float: left;
+}
+
+.quantity-picker .fa-plus-circle, .quantity-picker .fa-minus-circle {
+  margin-top: 6px;
+  float: right;
+  color: #D3D3D3;
+  font-size: 30px;
+}
+
+.quantity-picker .fa-plus-circle:hover, .quantity-picker .fa-minus-circle:hover {
+  color: #000000;
+  cursor: pointer;
+}
+
+.quantity-picker input {
+  margin-top: 10px;
+  text-align: center;
+  float: right;
+  border: none;
+  width: 3em;
+}

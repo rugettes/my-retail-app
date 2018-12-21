@@ -3,6 +3,7 @@ import './App.css';
 import Carousel from './components/Carousel'
 import Price from './components/Price'
 import Promotions from './components/Promotions'
+import QuantityPicker from './components/QuantityPicker'
 import Title from './components/Title'
 
 class App extends Component {
@@ -72,12 +73,7 @@ class App extends Component {
             <div className="col-md">
               <Price priceData={priceData} />
               <Promotions promotions={promotions} />
-              <div className="quantity-picker col-xs-12 col-md-5 col-lg-7">
-                <label>quantity:</label>
-                <i className="fas fa-plus-circle"></i>
-                <input placeholder="1" type="number" step="1" min="0"></input>
-                <i className="fas fa-minus-circle"></i>
-              </div>
+              <QuantityPicker />
               <div className="clearfix"></div>
               <div className="primary-button-group row">
                 <AvailableInStores availableInStores={availableInStores} />
