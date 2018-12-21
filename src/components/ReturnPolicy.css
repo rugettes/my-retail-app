@@ -1,0 +1,17 @@
+.return-policy {
+  display: flex;
+  margin: auto;
+  padding: 10px 0px;
+}
+
+.return-policy .lead {
+  display: block;
+  padding-right: 20px;
+}
+
+.return-policy .copy {
+  display: block;
+  padding-left: 20px;
+  border-left: thin solid #E5E5E5;
+  font-size: smaller;
+}

@@ -5,6 +5,7 @@ import Price from './components/Price'
 import PrimaryButtonGroup from './components/PrimaryButtonGroup'
 import Promotions from './components/Promotions'
 import QuantityPicker from './components/QuantityPicker'
+import ReturnPolicy from './components/ReturnPolicy'
 import Title from './components/Title'
 
 class App extends Component {
@@ -69,10 +70,7 @@ class App extends Component {
               <QuantityPicker />
               <div className="clearfix"></div>
               <PrimaryButtonGroup availableInStores={availableInStores} availableOnline={availableOnline} />
-              <div className="return-policy align-items-center">
-                <p className="lead text-lowercase">returns</p>
-                <p className="copy">This item must be returned within 30 days of the ship date. See <a href="/">return policy</a> for details. Prices, promotions, styles and availability may vary by store and online.</p>
-              </div>
+              <ReturnPolicy />
               <div className="secondary-button-group row">
                 <button type="button" className="col-sm btn btn-secondary btn-sm text-uppercase">add to registry</button>
                 <button type="button" className="col-sm btn btn-secondary btn-sm text-uppercase">add to list</button>
