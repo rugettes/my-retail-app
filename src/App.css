@@ -45,40 +45,6 @@ input[type=number]::-webkit-outer-spin-button {
   padding: 50px;
 }
 
-.return-policy {
-  display: flex;
-  margin: auto;
-  padding: 10px 0px;
-}
-
-.return-policy .lead {
-  display: block;
-  padding-right: 20px;
-}
-
-.return-policy .copy {
-  display: block;
-  padding-left: 20px;
-  border-left: thin solid #E5E5E5;
-  font-size: smaller;
-}
-
-.primary-button-group, .secondary-button-group {
-  text-align: center;
-  padding:20px 0px;
-}
-
-.secondary-button-group .btn {
-  color: black;
-  background: #EAEAEA;
-  border-color: #EAEAEA;
-}
-
-.secondary-button-group .btn:hover {
-  background: #D3D3D3;
-  border-color: #D3D3D3;
-}
-
 .ratings {
   display: block;
   background-color: #FFFFFF;

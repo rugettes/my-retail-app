@@ -6,6 +6,7 @@ import PrimaryButtonGroup from './components/PrimaryButtonGroup'
 import Promotions from './components/Promotions'
 import QuantityPicker from './components/QuantityPicker'
 import ReturnPolicy from './components/ReturnPolicy'
+import SecondaryButtonGroup from './components/SecondaryButtonGroup'
 import Title from './components/Title'
 
 class App extends Component {
@@ -71,11 +72,7 @@ class App extends Component {
               <div className="clearfix"></div>
               <PrimaryButtonGroup availableInStores={availableInStores} availableOnline={availableOnline} />
               <ReturnPolicy />
-              <div className="secondary-button-group row">
-                <button type="button" className="col-sm btn btn-secondary btn-sm text-uppercase">add to registry</button>
-                <button type="button" className="col-sm btn btn-secondary btn-sm text-uppercase">add to list</button>
-                <button type="button" className="col-sm btn btn-secondary btn-sm text-uppercase">share</button>
-              </div>
+              <SecondaryButtonGroup />
               <div className="product-highlights">
                 <h2 className="text-lowercase">product highlights</h2>
                 <ul>
