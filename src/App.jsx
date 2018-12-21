@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Carousel from './components/Carousel'
 import Price from './components/Price'
+import PrimaryButtonGroup from './components/PrimaryButtonGroup'
 import Promotions from './components/Promotions'
 import QuantityPicker from './components/QuantityPicker'
 import Title from './components/Title'
@@ -54,14 +55,6 @@ class App extends Component {
       const usefulConReview = itemData.CustomerReview[0].Con[0]
       const reviews = itemData.CustomerReview[0].Reviews
 
-      function AvailableInStores(props) {
-        return <button type="button" className="col-md btn btn-primary btn-lg text-uppercase available-in-store">pick up in store</button>
-      }
-
-      function AvailableOnline(props) {
-        return <button type="button" className="col-md btn btn-primary btn-lg text-uppercase available-online">add to cart</button>
-      }
-
       return (
       <div className="App">
         <div className="container">
@@ -75,10 +68,7 @@ class App extends Component {
               <Promotions promotions={promotions} />
               <QuantityPicker />
               <div className="clearfix"></div>
-              <div className="primary-button-group row">
-                <AvailableInStores availableInStores={availableInStores} />
-                <AvailableOnline availableOnline={availableOnline} />
-              </div>
+              <PrimaryButtonGroup availableInStores={availableInStores} availableOnline={availableOnline} />
               <div className="return-policy align-items-center">
                 <p className="lead text-lowercase">returns</p>
                 <p className="copy">This item must be returned within 30 days of the ship date. See <a href="/">return policy</a> for details. Prices, promotions, styles and availability may vary by store and online.</p>

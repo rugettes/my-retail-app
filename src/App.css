@@ -45,37 +45,6 @@ input[type=number]::-webkit-outer-spin-button {
   padding: 50px;
 }
 
-.quantity-picker {
-  border: thin solid #E5E5E5;
-  display: inline-block;
-}
-
-.quantity-picker label {
-  margin-top: 10px;
-  padding-right: 10px;
-  float: left;
-}
-
-.quantity-picker .fa-plus-circle, .quantity-picker .fa-minus-circle {
-  margin-top: 6px;
-  float: right;
-  color: #D3D3D3;
-  font-size: 30px;
-}
-
-.quantity-picker .fa-plus-circle:hover, .quantity-picker .fa-minus-circle:hover {
-  color: #000000;
-  cursor: pointer;
-}
-
-.quantity-picker input {
-  margin-top: 10px;
-  text-align: center;
-  float: right;
-  border: none;
-  width: 3em;
-}
-
 .return-policy {
   display: flex;
   margin: auto;
@@ -97,26 +66,6 @@ input[type=number]::-webkit-outer-spin-button {
 .primary-button-group, .secondary-button-group {
   text-align: center;
   padding:20px 0px;
-}
-
-.available-in-store {
-  background: #333333;
-  border-color: #333333;
-}
-
-.available-in-store:hover {
-  background: #000000;
-  border-color: #000000;
-}
-
-.available-online {
-  background: #CA0813;
-  border-color: #CA0813;
-}
-
-.available-online:hover {
-  background: #A8050F;
-  border-color: #A8050F;
 }
 
 .secondary-button-group .btn {
