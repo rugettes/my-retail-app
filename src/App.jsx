@@ -3,6 +3,7 @@ import './App.css';
 import Carousel from './components/Carousel'
 import Price from './components/Price'
 import PrimaryButtonGroup from './components/PrimaryButtonGroup'
+import ProductHighlights from './components/ProductHighlights'
 import Promotions from './components/Promotions'
 import QuantityPicker from './components/QuantityPicker'
 import ReturnPolicy from './components/ReturnPolicy'
@@ -73,15 +74,7 @@ class App extends Component {
               <PrimaryButtonGroup availableInStores={availableInStores} availableOnline={availableOnline} />
               <ReturnPolicy />
               <SecondaryButtonGroup />
-              <div className="product-highlights">
-                <h2 className="text-lowercase">product highlights</h2>
-                <ul>
-                  {features.map(feature => (
-                    <li dangerouslySetInnerHTML={{__html: feature}}>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <ProductHighlights features={features} />
             </div>
           </div>
           <div className="row">
