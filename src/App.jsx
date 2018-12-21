@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
 import Carousel from './components/Carousel'
 import Price from './components/Price'
 import PrimaryButtonGroup from './components/PrimaryButtonGroup'
@@ -13,12 +13,12 @@ import Title from './components/Title'
 
 class App extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       error: null,
       isLoaded: false,
       data: null
-    };
+    }
   }
 
   componentDidMount() {
@@ -29,25 +29,25 @@ class App extends Component {
           this.setState({
             isLoaded: true,
             data: result
-          });
+          })
         },
         (error) => {
           this.setState({
             isLoaded: true,
             error
-          });
+          })
         }
       )
   }
 
   render() {
-    const { error, isLoaded, data } = this.state;
+    const { error, isLoaded, data } = this.state
     if (error) {
-      return <div>Error: {error.message}</div>;
+      return <div>Error: {error.message}</div>
     } else if (!isLoaded) {
-      return <div>Loading...</div>;
+      return <div>Loading...</div>
     } else {
-      const itemData = data.CatalogEntryView[0];
+      const itemData = data.CatalogEntryView[0]
       const imageData = itemData.Images[0]
       const priceData = itemData.Offers[0].OfferPrice[0]
       const promotions = itemData.Promotions
@@ -83,9 +83,9 @@ class App extends Component {
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 }
 
-export default App;
+export default App
