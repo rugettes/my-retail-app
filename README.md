@@ -27,6 +27,13 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+## CI/CD Plan
+
+![nice image showing the CI/CD play](https://cdn-images-1.medium.com/max/800/0*Ibsu7Nvvd9gyhHxO.png)
+
+The plan is to have Travis CI run tests and, if they pass, build the files when a commit is done to the master branch. Travis will then deploy the built files to github pages for hosting.
+
+
 ### `yarn run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
