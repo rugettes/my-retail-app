@@ -70,7 +70,7 @@ class App extends Component {
             <div className="col-md">
               <Price priceData={priceData} />
               <Promotions promotions={promotions} />
-              <QuantityPicker />
+              <QuantityPicker quantity="1" />
               <div className="clearfix"></div>
               <PrimaryButtonGroup availableInStores={availableInStores} availableOnline={availableOnline} />
               <ReturnPolicy />

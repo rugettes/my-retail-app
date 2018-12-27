@@ -1,9 +1,3 @@
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
 .quantity-picker {
   border: thin solid #E5E5E5;
   display: inline-block;
@@ -27,7 +21,7 @@ input[type=number]::-webkit-outer-spin-button {
   cursor: pointer;
 }
 
-.quantity-picker input {
+.quantity-picker .quantity {
   margin-top: 10px;
   text-align: center;
   float: right;
