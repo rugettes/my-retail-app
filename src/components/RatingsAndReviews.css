@@ -57,6 +57,10 @@
   font-size: smaller;
 }
 
+.reviews hr {
+  margin-top: 0px;
+}
+
 .reviews-header {
   display: flex;
 }

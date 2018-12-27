@@ -79,6 +79,7 @@ class App extends Component {
             </div>
           </div>
           <div className="row">
+            {/* TODO: pass in average rating as prop */}
             <RatingsAndReviews reviews={reviews} usefulProReview={usefulProReview} usefulConReview={usefulConReview} />
           </div>
         </div>
