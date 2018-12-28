@@ -25,6 +25,7 @@ export default class Carousel extends Component {
     return (
       <div className="carousel">
         <img src={primaryImageLocation.source} alt="" className="primary"></img>
+        <br />
         <span className="view-larger"><i className="fas fa-search-plus"></i> View larger</span>
         <div className="text-center">
           <i className="fas fa-angle-left arrows"></i>
